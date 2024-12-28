@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="signUp.css">
+</head>
+
+<body>
+    <div class="wrapper login">
+        <div class="container">
+            <div class="col-left">
+                <div class="login-text">
+                    <h2>Welcome!</h2>
+                    <p>Create your account.<br>For Free!</p>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="login-form">
+                    <h2>Sign Up</h2>
+                    <form id="loginForm" action="home.html" method="get" onsubmit="return validateForm()">
+                        <p>
+                            <label for="username">Username/Email address<span>*</span></label>
+                            <input type="text" id="username" placeholder="Username or Email" required>
+                        </p>
+                        <p>
+                            <label for="password">Password<span>*</span></label>
+                            <input type="password" id="password" placeholder="Password" required>
+                        </p>
+                        <p><input type="submit" value="Sign Up"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "") {
+                alert("Please enter your Username or Email.");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Please enter your password.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
+
+
+
